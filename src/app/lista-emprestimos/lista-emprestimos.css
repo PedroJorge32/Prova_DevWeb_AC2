@@ -1,0 +1,9 @@
+li { color: brown; margin: 8px 0; }
+li.concluida .nome { text-decoration: line-through; }
+button {
+border: none; color: white; padding: 4px 10px;
+margin-left: 6px; cursor: pointer;
+}
+.btn-concluir { background-color: green; }
+.btn-remover { background-color: red; }
+button:disabled { opacity: 0.5; cursor: default; }

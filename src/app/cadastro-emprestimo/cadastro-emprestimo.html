@@ -1,0 +1,20 @@
+<h1>Cadastrar devolução</h1>
+<form (ngSubmit)="cadastrar()">
+<label>Nome do Livro:
+<input type="text" name="nome" [(ngModel)]="NomeLivro">
+</label>
+<label>Nome da pessoa:
+<input type="text" name="nomePessoa" [(ngModel)]="nomePessoa">
+</label>
+<label>Prazo de devolução:
+<input type="date" name="prazo" [(ngModel)]="DataDevolucao">
+</label>
+
+<button type="submit">Cadastrar</button>
+</form>
+@if (mensagem) {
+<p>{{ mensagem }}</p>
+}
+<a routerLink="/listar">Ver lista de devoluções</a>
+
+

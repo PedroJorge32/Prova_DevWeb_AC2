@@ -1,0 +1,25 @@
+<h1>Livros Cadastrados</h1>
+
+<p class="contador">
+Total: {{ total }} | Concluídas: {{ concluidas }} | Pendentes: {{ pendentes }}
+</p>
+
+@if (livros.length === 0) {
+<p>Nenhum livro cadastrado</p>
+} @else {
+<ul>
+
+@for (livro of livros; track livro.id) {
+<li [class.concluida]="livro.devolvido">
+<span class="nome">{{ livro.TituloLivro }}</span>
+<span> ({{ livro.devolvido ? 'Devolvido' : 'Aguardando devolução' }})</span>
+
+
+<button class="btn-concluir" (click)="concluir(livro.id)"
+[disabled]="livro.devolvido">Resgistrar devolução</button>
+<button class="btn-remover" (click)="remover(livro.id)">Remover</button>
+</li>
+}
+</ul>
+}
+<a routerLink="/cadastro">Voltar ao cadastro</a>
